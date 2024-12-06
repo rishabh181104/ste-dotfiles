@@ -12,6 +12,10 @@ exec --no-startup-id picom
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
+set $terminal alacritty
+set $browser brave-browser
+set $filemanager cosmic-files
+set $editor zed
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
@@ -23,7 +27,7 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 
-bindsym $mod+space exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+bindsym $mod+space exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-16' -p 'dmenu%'"
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
@@ -48,9 +52,11 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $terminal
 bindsym $mod+q kill
-bindsym $mod+b exec brave-browser
+bindsym $mod+b exec $browser
+bindsym $mod+e exec $filemanager
+bindsym $mod+o exec $editor
 
 # change focus
 bindsym Mod1+j focus left
@@ -88,7 +94,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
