@@ -6,6 +6,7 @@ exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1080 --rate 60.00
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id flameshot
 exec --no-startup-id nm-applet
 exec --no-startup-id picom
 
@@ -27,7 +28,7 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 
-bindsym $mod+space exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-16' -p 'dmenu%'"
+bindsym $mod+space exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-20' -p 'dmenu%'"
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
