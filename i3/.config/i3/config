@@ -2,7 +2,7 @@ set $mod Mod4
 
 font pango:monospace 10
 
-exec --no-startup-id feh --bg-scale ~/Wallpapers/*
+exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1080 --rate 60.00
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -58,6 +58,7 @@ bindsym $mod+b exec $browser
 bindsym $mod+e exec $filemanager
 bindsym $mod+o exec $editor
 bindsym $mod+s exec spotify
+bindsym $mod+Shift+w exec feh --randomize --bg-fill ~/Wallpapers/*
 
 # change focus
 bindsym Mod1+j focus left
