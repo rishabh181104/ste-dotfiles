@@ -15,7 +15,7 @@ set $refresh_i3status killall -SIGUSR1 i3status
 
 set $terminal alacritty
 set $browser brave-browser-nightly
-set $filemanager cosmic-files
+set $filemanager nemo
 set $editor ~/./cursor.AppImage
 
 # class                 border  bground text    indicator child_border
