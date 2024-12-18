@@ -156,12 +156,15 @@ noremap <silent> <leader>e :Lex<CR>
 syntax on
 
 " Colorscheme
-" colorscheme industry
 colorscheme wildcharm
 set background=dark
-" hi Normal ctermbg=NONE guibg=NONE
-" hi NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-" hi VertSplit guibg=NONE guifg=NONE ctermbg=NONE ctermfg=NONE
+
+" Enable transparency
+highlight Normal guibg=NONE ctermbg=NONE
+highlight NonText guibg=NONE ctermbg=NONE
+highlight SignColumn guibg=NONE ctermbg=NONE
+highlight VertSplit guibg=NONE ctermbg=NONE
+highlight EndOfBuffer guibg=NONE ctermbg=NONE
 
 " Sync clipboard with OS
 if system('uname -s') == "Darwin\n"
