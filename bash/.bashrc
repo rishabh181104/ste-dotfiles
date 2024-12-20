@@ -66,6 +66,9 @@ export EDITOR=nvim
 export VISUAL=nvim
 alias spico='sudo pico'
 alias snano='sudo nano'
+alias syu='sudo pacman -Syu'
+# alias syu='sudo apt update && sudo apt full-upgrade'
+# alias syu='sudo dnf update'
 
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
 export CLICOLOR=1
