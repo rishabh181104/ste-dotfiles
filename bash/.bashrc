@@ -66,7 +66,8 @@ export EDITOR=nvim
 export VISUAL=nvim
 alias spico='sudo pico'
 alias snano='sudo nano'
-alias syu='sudo pacman -Syu'
+alias u='sudo pacman -Syu'
+alias update='yay -Syu --noconfirm || paru -Syu --noconfirm || sudo pacman -Syu'
 # alias syu='sudo apt update && sudo apt full-upgrade'
 # alias syu='sudo dnf update'
 
