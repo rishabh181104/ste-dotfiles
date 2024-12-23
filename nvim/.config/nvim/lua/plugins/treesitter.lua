@@ -1,26 +1,63 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    tag = "v0.9.1",
     opts = {
       ensure_installed = {
-        "javascript",
-        "typescript",
+        "astro",
+        "bash",
+        "c",
+        "cmake",
+        "cpp",
         "css",
+        "diff",
+        "dockerfile",
         "gitignore",
-        "graphql",
+        "go",
+        "gomod",
+        "gosum",
+        "gowork",
+        "html",
         "http",
+        "javascript",
+        "jsdoc",
         "json",
-        "scss",
-        "sql",
-        "vim",
+        "json5",
+        "jsonc",
         "lua",
+        "luadoc",
+        "luap",
+        "markdown",
+        "markdown_inline",
+        "prisma",
+        "python",
+        "query",
+        "regex",
+        "sql",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "yaml",
       },
-      query_linter = {
-        enable = true,
-        use_virtual_text = true,
-        lint_events = { "Bufwrite", "CursorHold" },
-      },
+      config = function(_, opts)
+        require("nvim-treesitter.configs").setup(opts)
+
+        -- MDX
+        vim.filetype.add({
+          extension = {
+            mdx = "mdx",
+          },
+        })
+        vim.treesitter.language.register("markdown", "mdx")
+      end,
     },
+  },
+  {
+    "nvim-treesitter/playground",
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    enabled = false,
   },
 }
