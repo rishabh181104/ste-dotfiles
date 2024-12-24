@@ -19,13 +19,6 @@ vim.keymap.set("n", "<leader>gg", function()
   Util.terminal({ "lazygit" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false, border = "none" })
 end, { desc = "Lazygit (root dir)" })
 
-keymap.del({ "n", "i", "v" }, "<A-j>")
-keymap.del({ "n", "i", "v" }, "<A-k>")
-keymap.del("n", "<C-Left>")
-keymap.del("n", "<C-Down>")
-keymap.del("n", "<C-Up>")
-keymap.del("n", "<C-Right>")
-
 keymap.set("n", "<M-h>", '<Cmd>lua require("tmux").resize_left()<CR>', { silent = true })
 keymap.set("n", "<M-j>", '<Cmd>lua require("tmux").resize_bottom()<CR>', { silent = true })
 keymap.set("n", "<M-k>", '<Cmd>lua require("tmux").resize_top()<CR>', { silent = true })
@@ -51,12 +44,6 @@ set_keymap(
 )
 set_keymap(
   "n",
-  "<leader>cpd",
-  "<cmd>lua require('package-info').delete()<cr>",
-  { silent = true, noremap = true, desc = "Delete package" }
-)
-set_keymap(
-  "n",
   "<leader>cpu",
   "<cmd>lua require('package-info').update()<cr>",
   { silent = true, noremap = true, desc = "Update package" }
@@ -73,15 +60,6 @@ set_keymap(
   "<cmd>lua require('package-info').change_version()<cr>",
   { silent = true, noremap = true, desc = "Change package version" }
 )
-
-local status, harpoon_mark = pcall(require, "harpoon2.mark") -- Adjust 'harpoon2' if necessary
-if not status then
-  vim.notify("Harpoon2 is not loaded! Ensure it's installed correctly.", vim.log.levels.ERROR)
-  return
-end
-
--- Map <leader>ha to add the current file to Harpoon2
-vim.keymap.set("n", "<leader>ha", harpoon_mark.add_file, { desc = "Add current file to Harpoon2" })
 
 -- Buffer navigation
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>") -- Next buffer
