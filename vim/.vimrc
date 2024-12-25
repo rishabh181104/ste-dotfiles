@@ -156,7 +156,6 @@ noremap <silent> <leader>e :Lex<CR>
 syntax on
 
 " Colorscheme
-colorscheme wildcharm
 set background=dark
 
 " Enable transparency
