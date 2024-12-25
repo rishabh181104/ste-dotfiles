@@ -47,13 +47,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 bindsym $mod+j workspace prev
 bindsym $mod+k workspace next
 
-
-floating_modifier $mod
-
-
-tiling_drag modifier titlebar
-
-
 bindsym $mod+Return exec $terminal
 bindsym $mod+q kill
 bindsym $mod+b exec $browser
