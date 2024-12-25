@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:monospace 9
+font pango:monospace 5
 
 exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
 exec --no-startup-id dex --autostart --environment i3
