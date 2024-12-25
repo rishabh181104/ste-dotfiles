@@ -16,8 +16,15 @@ set $refresh_i3status killall -SIGUSR1 i3status
 
 set $terminal alacritty
 set $browser brave-browser
-set $filemanager nemo
+set $filemanager nautilus
 set $editor ~/./cursor.AppImage
+
+new_window pixel 2
+new_float pixel 2
+
+# Gaps (if you use i3-gaps)
+gaps inner 3
+gaps outer 1
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
