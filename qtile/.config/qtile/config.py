@@ -241,6 +241,11 @@ def get_widgets(primary=False):
             foreground=dracula["black"],
             background="#00000000",
         ),
+        widget.Prompt(
+            fontsize=18,
+            padding=20,
+            foreground=dracula["rosewater"],
+        ),
         widget.Spacer(length=10, background="#00000000"),  # Spacer after GroupBox
         widget.WindowName(
             fontsize=18,
