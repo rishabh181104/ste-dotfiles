@@ -340,11 +340,36 @@ def get_widgets(primary=False):
             text="",
             padding=0,
             fontsize=30,
+            foreground=dracula["peach"],
+            background="#00000000",
+        ),
+        widget.Battery(
+            format="🔋 {percent:2.0%} {status}",
+            foreground=dracula["black"],
+            background=dracula["peach"],
+            update_interval=60,
+            charge_char="⚡",
+            discharge_char="⚡",
+            full_char="🔋",
+        ),
+        widget.TextBox(
+            text="",
+            padding=0,
+            fontsize=30,
+            foreground=dracula["peach"],
+            background="#00000000",
+        ),
+        widget.Spacer(length=40, background="#00000000"),  # Spacer after Clock
+        widget.TextBox(
+            text="",
+            padding=0,
+            fontsize=30,
             foreground=dracula["grey"],
             background="#00000000",
         ),
         widget.Systray(
-            foreground=dracula["grey"],
+            foreground=dracula["black"],
+            background=dracula["grey"],
         ),
         widget.TextBox(
             text="",
