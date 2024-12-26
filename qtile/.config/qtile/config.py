@@ -138,7 +138,7 @@ for vt in range(1, 8):
     )
 
 
-groups = [Group(i) for i in ["", "", "", "��", "", "󰡈", "", "", ""]]
+groups = [Group(i) for i in ["", "", "", "", "", "󰡈", "", "", ""]]
 groups_hotkeys = "123456789"
 
 for g, k in zip(groups, groups_hotkeys):
