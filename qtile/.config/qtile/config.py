@@ -37,9 +37,9 @@ terminal = "alacritty"
 browser = "brave-browser-nightly"
 code_editor = "/home/ste/./cursor.AppImage"
 github_desktop = "github-desktop"
-subprocess.call(
-    ["xrandr", "--output", "eDP-1", "--mode", "1920x1080", "--rate", "60.01"]
-)
+spotify = "spotify"
+discord = "discord"
+obsidian = "obsidian"
 
 
 @hook.subscribe.startup
@@ -83,6 +83,9 @@ keys = [
     Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
     Key([mod], "u", lazy.spawn(code_editor), desc="Launch editor"),
     Key([mod], "g", lazy.spawn(github_desktop), desc="Launch github_desktop"),
+    Key([mod], "s", lazy.spawn(spotify), desc="Launch spotify"),
+    Key([mod], "o", lazy.spawn(obsidian), desc="Launch obsidian"),
+    Key([mod], "i", lazy.spawn(discord), desc="Launch discord"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
@@ -101,8 +104,6 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "space", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "k", lazy.group.next(), desc="Move to the next group (desktop)"),
-    Key([mod], "j", lazy.group.prev(), desc="Move to the previous group (desktop)"),
     # Volume Control
     Key(
         [],
