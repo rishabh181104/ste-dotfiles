@@ -36,7 +36,7 @@ alt = "mod1"
 terminal = "alacritty"
 browser = "brave-browser-nightly"
 code_editor = "/home/ste/./cursor.AppImage"
-
+github_desktop = "github-desktop"
 subprocess.call(
     ["xrandr", "--output", "eDP-1", "--mode", "1920x1080", "--rate", "60.01"]
 )
@@ -82,6 +82,7 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
     Key([mod], "u", lazy.spawn(code_editor), desc="Launch editor"),
+    Key([mod], "g", lazy.spawn(github_desktop), desc="Launch github_desktop"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
