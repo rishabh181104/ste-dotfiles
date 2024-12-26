@@ -18,3 +18,5 @@ flameshot &
 nm-applet &
 
 blueman-applet &
+
+dunst &
