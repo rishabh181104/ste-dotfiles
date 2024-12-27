@@ -64,10 +64,10 @@ bindsym $mod+g exec github-desktop
 bindsym $mod+Shift+w exec feh --randomize --bg-fill ~/Wallpapers/*
 
 # change focus
-bindsym Mod1+j focus left
-bindsym Mod1+k focus down
-bindsym Mod1+l focus up
-bindsym Mod1+semicolon focus right
+bindsym Mod1+h focus left
+bindsym Mod1+j focus down
+bindsym Mod1+k focus up
+bindsym Mod1+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -178,7 +178,7 @@ mode "resize" {
 bar {
     status_command i3status  # Or your chosen status tool
     colors {
-        background #282a36  # Background color of the bar
+        background #00000000  # Background color of the bar
         statusline #f8f8f2  # Text color for the bar
         separator  #44475a  # Separator color
 
