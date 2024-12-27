@@ -28,6 +28,7 @@ from libqtile.lazy import lazy
 import subprocess
 import os
 import logging
+from libqtile import bar, layout, qtile, widget, hook
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -185,18 +186,7 @@ layouts = [
         margin=5,
         border_width=2,
     ),
-    layout.Columns(border_focus_stack=["#89dceb", "#89dd3d"], border_width=4),
-    layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
     layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
