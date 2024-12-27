@@ -18,6 +18,8 @@ set $terminal alacritty
 set $browser brave-browser
 set $filemanager nautilus
 set $editor ~/./cursor.AppImage
+set $music spotify
+set $communication discord
 
 new_window pixel 2
 new_float pixel 2
@@ -59,7 +61,8 @@ bindsym $mod+q kill
 bindsym $mod+b exec $browser
 bindsym $mod+e exec $filemanager
 bindsym $mod+o exec $editor
-bindsym $mod+s exec spotify
+bindsym $mod+s exec $music
+bindsym $mod+c exec $communication
 bindsym $mod+g exec github-desktop
 bindsym $mod+Shift+w exec feh --randomize --bg-fill ~/Wallpapers/*
 
