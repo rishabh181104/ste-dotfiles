@@ -4,9 +4,13 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " " 
 vim.g.maplocalleader = " "
 
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "jk", "<Esc>")
 vim.keymap.set("v", "jk", "<Esc>")
+
 map("n", "<leader>w", ":w<CR>", opts)
 map("n", "<leader>q", ":q<CR>", opts) 
 map("n", "<leader>h", ":nohlsearch<CR>", opts)
