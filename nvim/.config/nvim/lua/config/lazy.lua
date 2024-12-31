@@ -21,10 +21,18 @@ require("lazy").setup({
 	"nvim-neo-tree/neo-tree.nvim",
 	"nvim-tree/nvim-web-devicons",
 	"MunifTanjim/nui.nvim",
-	"VonHeikemen/lsp-zero.nvim",
-	"neovim/nvim-lspconfig",
-	"williamboman/mason.nvim",
+	{
+		"williamboman/mason.nvim",
+		build = ":MasonUpdate",
+		config = function()
+			require("mason").setup()
+		end,
+	},
 	"williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
+	"jay-babu/mason-null-ls.nvim",
+	"jose-elias-alvarez/null-ls.nvim",
+	"VonHeikemen/lsp-zero.nvim",
 	{
 		'hrsh7th/nvim-cmp',
 		dependencies = {
