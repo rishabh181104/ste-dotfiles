@@ -1,0 +1,7 @@
+require("config.lazy")
+require("config.keymaps")
+require("config.set")
+require("plugins.rose-pine")
+require("plugins.lsp")
+require("plugins.cmp")
+require("plugins.autoindent")
