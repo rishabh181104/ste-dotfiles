@@ -1,50 +1,76 @@
+-- Mason LSP Configuration
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"pyright", -- Python LSP
-		"rust_analyzer", -- Rust LSP
-		"gopls", -- Go LSP
-		"ts_ls", -- JavaScript/TypeScript LSP
-		"html", -- HTML LSP
-		"cssls", -- CSS LSP
+		"pyright", -- Python
+		"rust_analyzer", -- Rust
+		"gopls", -- Go
+		"ts_ls", -- JavaScript/TypeScript
+		"html", -- HTML
+		"cssls", -- CSS
 	},
 })
 
--- Setup handlers for LSP
+-- LSP setup with custom on_attach and capabilities
 local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+local function on_attach(client, bufnr)
+	local opts = { buffer = bufnr }
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+	vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
+	vim.keymap.set({ "n", "x" }, "<F3>", function() vim.lsp.buf.format({ async = true }) end, opts)
+end
+
 require("mason-lspconfig").setup_handlers({
 	function(server_name)
-		lspconfig[server_name].setup({})
+		lspconfig[server_name].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
 	end,
 })
 
--- Mason-null-ls setup for formatters and linters
+-- Mason Null-LS Configuration
 require("mason-null-ls").setup({
 	ensure_installed = {
 		-- Formatters
-		"black", -- Python formatter
-		"stylua", -- Lua formatter (optional, for Neovim configuration)
-		"prettier", -- Formatter for JavaScript, TypeScript, HTML, CSS
-		"rustfmt", -- Rust formatter
-		"gofumpt", -- Go formatter
-
+		"black", "stylua", "prettier", "rustfmt", "gofumpt",
 		-- Linters
-		"flake8", -- Python linter
-		"eslint_d", -- JavaScript/TypeScript linter
+		"flake8", "eslint_d",
 	},
 	automatic_installation = true,
 })
 
--- Null-ls configuration
+-- Null-LS Configuration
 local null_ls = require("null-ls")
+
+-- Null-LS sources
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+
 null_ls.setup({
 	sources = {
-		null_ls.builtins.formatting.black,
-		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.formatting.prettier,
-		null_ls.builtins.formatting.rustfmt,
-		null_ls.builtins.formatting.gofumpt,
-
-		null_ls.builtins.diagnostics.flake8,
-		null_ls.builtins.diagnostics.eslint_d,
+		-- Formatters
+		formatting.black,
+		formatting.stylua,
+		formatting.prettier,
+		formatting.rustfmt,
+		formatting.gofumpt,
+		-- Linters
+		diagnostics.flake8,
+		diagnostics.eslint_d,
 	},
+	on_attach = function(client, bufnr)
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.format({ async = false })
+				end,
+			})
+		end
+	end,
 })

@@ -1,13 +1,18 @@
-local cmp = require("cmp")
-local luasnip = require("luasnip")
-local lspkind = require("lspkind")
+local status_cmp, cmp = pcall(require, "cmp")
+local status_luasnip, luasnip = pcall(require, "luasnip")
+local status_lspkind, lspkind = pcall(require, "lspkind")
+
+if not (status_cmp and status_luasnip and status_lspkind) then
+	vim.notify("Failed to load cmp or related modules", vim.log.levels.ERROR)
+	return
+end
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expand(args.body) -- Use LuaSnip for snippets
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
@@ -36,19 +41,21 @@ cmp.setup({
 		end, { "i", "s" }),
 	}),
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" }, -- LSP suggestions
-		{ name = "luasnip" },  -- Snippet suggestions
-		{ name = "buffer" },   -- Buffer suggestions
-		{ name = "path" },     -- Path suggestions
+		{ name = "nvim_lsp", priority = 10 },
+		{ name = "luasnip",  priority = 9 },
+		{ name = "buffer",   priority = 8 },
+		{ name = "path",     priority = 7 },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({
-			mode = "symbol_text", -- Show both symbols and text
-			maxwidth = 50,        -- Truncate long item names
-			ellipsis_char = "...", -- Ellipsis for truncated items
+			mode = "symbol_text",
+			maxwidth = 50,
+			ellipsis_char = "...",
 		}),
 	},
 })
+
+-- Command-line completion for `:`
 cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
@@ -57,6 +64,8 @@ cmp.setup.cmdline(":", {
 			{ name = "cmdline" },
 		}),
 })
+
+-- Command-line completion for `/` (buffer)
 cmp.setup.cmdline("/", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
