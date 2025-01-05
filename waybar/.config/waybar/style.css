@@ -1,0 +1,74 @@
+/* Dracula Theme Colors Applied Directly */
+
+/* General Waybar styling with translucency */
+#waybar {
+  background-color: rgba(40, 42, 54, 0.8);  /* Dracula background color with 80% opacity for translucency */
+  color: #f8f8f2;  /* Dracula foreground color */
+  font-family: "Sans";
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 8px; /* Rounded corners for a modern look */
+}
+
+#waybar button,
+#waybar label {
+  color: #f8f8f2;
+  margin-left: 10px;  /* Space between modules */
+  margin-right: 10px;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  color: #f8f8f2;
+}
+
+#workspaces button.focused {
+  background: #bd93f9;  /* Dracula accent color */
+  color: #282a36;  /* Dracula background color */
+}
+
+#workspaces button.urgent {
+  background: #ffb86c;  /* Dracula warning color */
+  color: #282a36;
+}
+
+#clock,
+#cpu,
+#memory,
+#network,
+#temperature,
+#battery {
+  color: #f8f8f2;
+  margin-left: 10px;  /* Space between the modules */
+}
+
+#battery.critical {
+  color: #ff5555;  /* Dracula error color */
+}
+
+#battery.warning {
+  color: #ffb86c;  /* Dracula warning color */
+}
+
+/* Hover effects */
+#waybar button:hover {
+  background-color: #50fa7b;  /* Dracula highlight color */
+  color: #282a36;
+}
+
+#workspaces button:hover {
+  background-color: #50fa7b;
+  color: #282a36;
+}
+
+/* Disabled button styling */
+#waybar button:disabled {
+  background-color: #6272a4;  /* Dracula inactive color */
+  color: #f8f8f2;
+}
+
+#waybar button:disabled:hover {
+  background-color: #6272a4;
+  color: #f8f8f2;
+}
+

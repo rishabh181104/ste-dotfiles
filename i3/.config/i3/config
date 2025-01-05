@@ -11,6 +11,8 @@ exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
 							      exec --no-startup-id picom
 							      exec --no-startup-id blueman-applet
 							      exec --no-startup-id protonvpn-app
+							      exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
+							      exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
 
 
 							      set $refresh_i3status killall -SIGUSR1 i3status
