@@ -1,12 +1,9 @@
 -- Mason LSP Configuration
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"pyright", -- Python
 		"rust_analyzer", -- Rust
 		"gopls", -- Go
 		"ts_ls", -- JavaScript/TypeScript
-		"html", -- HTML
-		"cssls", -- CSS
 	},
 })
 
@@ -21,7 +18,9 @@ local function on_attach(client, bufnr)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 	vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
-	vim.keymap.set({ "n", "x" }, "<F3>", function() vim.lsp.buf.format({ async = true }) end, opts)
+	vim.keymap.set({ "n", "x" }, "<F3>", function()
+		vim.lsp.buf.format({ async = true })
+	end, opts)
 end
 
 require("mason-lspconfig").setup_handlers({
@@ -37,9 +36,14 @@ require("mason-lspconfig").setup_handlers({
 require("mason-null-ls").setup({
 	ensure_installed = {
 		-- Formatters
-		"black", "stylua", "prettier", "rustfmt", "gofumpt",
+		"black",
+		"stylua",
+		"prettier",
+		"rustfmt",
+		"gofumpt",
 		-- Linters
-		"flake8", "eslint_d",
+		"flake8",
+		"eslint_d",
 	},
 	automatic_installation = true,
 })
