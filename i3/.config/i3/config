@@ -19,7 +19,7 @@ exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
 							      set $browser brave-browser
 							      set $filemanager nautilus
 							      set $editor ~/./cursor.AppImage
-							      set $music spotify
+							      set $music spotify-launcher
 							      set $communication discord
 							      set $creativity obsidian
 
