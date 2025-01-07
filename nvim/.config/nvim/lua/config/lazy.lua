@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	if vim.v.shell_error ~= 0 then
 		vim.api.nvim_echo({
 			{ "Failed to clone lazy.nvim. Please check your internet connection or repository URL:\n", "ErrorMsg" },
-			{ out,                                                                                     "WarningMsg" },
+			{ out, "WarningMsg" },
 			{ "\nPress any key to exit..." },
 		}, true, {})
 		vim.fn.getchar()
@@ -41,32 +41,32 @@ require("lazy").setup({
 
 	-- Completion plugins
 	{
-		'hrsh7th/nvim-cmp',
+		"hrsh7th/nvim-cmp",
 		dependencies = {
-			'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
-			'hrsh7th/cmp-buffer', -- Buffer completions
-			'hrsh7th/cmp-path', -- Path completions
-			'hrsh7th/cmp-cmdline', -- Command-line completions
-			'saadparwaiz1/cmp_luasnip', -- Snippet completions
-			'L3MON4D3/LuaSnip', -- Snippet engine
-			'onsails/lspkind.nvim', -- Icons for completion items
+			"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
+			"hrsh7th/cmp-buffer", -- Buffer completions
+			"hrsh7th/cmp-path", -- Path completions
+			"hrsh7th/cmp-cmdline", -- Command-line completions
+			"saadparwaiz1/cmp_luasnip", -- Snippet completions
+			"L3MON4D3/LuaSnip", -- Snippet engine
+			"onsails/lspkind.nvim", -- Icons for completion items
 		},
 	},
-	'rafamadriz/friendly-snippets',
-	'L3MON4D3/LuaSnip',
+	"rafamadriz/friendly-snippets",
+	"L3MON4D3/LuaSnip",
 
 	-- Treesitter
 	{
-		'nvim-treesitter/nvim-treesitter',
-		build = ':TSUpdate',
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
 		config = function()
-			require('nvim-treesitter.configs').setup {
-				ensure_installed = "all", -- or specify languages
+			require("nvim-treesitter.configs").setup({
+				ensure_installed = "python", -- or specify languages
 				highlight = { enable = true },
 				indent = { enable = true },
 				incremental_selection = { enable = true },
-			}
-		end
+			})
+		end,
 	},
 
 	-- Startify
@@ -84,7 +84,6 @@ require("lazy").setup({
 				"⠀⠳⡄⠀⠀⢿⣿⡿⠿⣿⣿⣿⣷⣄⠀⠀⠀⢠⠞⠀ ",
 				"⠀⠀⠙⢦⣀⣨⣿⣅⣀⣀⣀⣉⣉⣻⣧⣀⡴⠋⠀⠀ ",
 				"⠀⠀⠀⠀⠈⠛⠿⢿⣿⣿⣿⣿⡿⠿⠛⠁⠀⠀⠀⠀ ",
-
 			}
 		end,
 	},
