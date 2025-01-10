@@ -17,7 +17,7 @@ exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
 
 							      set $terminal alacritty
 							      set $browser brave-browser
-							      set $filemanager nautilus
+							      set $filemanager thunar
 							      set $editor ~/./cursor.AppImage
 							      set $music spotify-launcher
 							      set $communication discord
