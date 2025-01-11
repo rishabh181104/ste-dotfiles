@@ -19,6 +19,16 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
+# Add these new lines for syntax highlighting
+zinit ice wait lucid
+zinit light zdharma-continuum/fast-syntax-highlighting
+
+# Optional but recommended plugins for better shell experience
+zinit ice wait lucid
+zinit light zsh-users/zsh-autosuggestions
+
+zinit ice wait lucid
+zinit light zsh-users/zsh-completions
 
 # History settings
 HISTFILE=~/.zsh_history
