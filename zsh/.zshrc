@@ -51,6 +51,12 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export LINUXTOOLBOXDIR="$HOME/linuxtoolbox"
 
+# Custom Environment Variables
+export WORKSPACE=~/Projects
+export PATH="$HOME/.local/bin:$PATH"
+export NODE_ENV=development
+export PYTHONPATH="$HOME/.local/lib/python3.10/site-packages:$PYTHONPATH"
+
 
 # Set the default editor
 export EDITOR=nvim
@@ -223,6 +229,10 @@ bindkey '^[[B' down-line-or-history
 # Add zsh-specific completion settings
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+
+export PATH=~/.npm-global/bin:$PATH
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
