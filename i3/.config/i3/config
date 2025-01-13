@@ -20,7 +20,7 @@ exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
 							      set $filemanager thunar
 							      set $editor ~/./cursor.AppImage
 							      set $music spotify-launcher
-							      set $communication whatsapp-for-linux
+							      set $communication wwasistlos
 							      set $creativity ~/./obsidian.AppImage
 
 							      new_window pixel 2
