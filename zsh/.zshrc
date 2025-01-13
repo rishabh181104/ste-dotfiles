@@ -199,12 +199,6 @@ lazyg() {
 # Path
 export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
 
-# Initialize starship prompt
-eval "$(starship init zsh)"
-
-# Initialize zoxide
-eval "$(zoxide init zsh)"
-
 # ZSH-specific settings
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
