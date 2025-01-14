@@ -5,6 +5,9 @@ require("mason-lspconfig").setup({
 		"gopls", -- Go
 		"ts_ls", -- JavaScript/TypeScript
 		"pyright",
+		"html",
+		"cssls",
+		"lua_ls",
 	},
 })
 
