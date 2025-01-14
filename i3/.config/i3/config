@@ -2,29 +2,29 @@ set $mod Mod4
 
 font pango:monospace 9
 
-exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
-							      exec --no-startup-id dex --autostart --environment i3
-							      exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --rate 60.00
-							      exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-							      exec --no-startup-id flameshot
-							      exec --no-startup-id nm-applet
-							      exec --no-startup-id picom
-							      exec --no-startup-id blueman-applet
-							      exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --rate 60.00
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id flameshot
+exec --no-startup-id nm-applet
+exec --no-startup-id picom
+exec --no-startup-id blueman-applet
+exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
 
+exec --no-startup-id "feh --randomize --bg-fill ~/Wallpapers/*"
 
-							      set $refresh_i3status killall -SIGUSR1 i3status
+set $refresh_i3status killall -SIGUSR1 i3status
 
-							      set $terminal alacritty
-							      set $browser brave-browser
-							      set $filemanager thunar
-							      set $editor ~/./cursor.AppImage
-							      set $music spotify-launcher
-							      set $communication wasistlos
-							      set $creativity ~/./obsidian.AppImage
+set $terminal alacritty
+set $browser brave-browser
+set $filemanager thunar
+set $editor ~/./cursor.AppImage
+set $music spotify-launcher
+set $communication wasistlos
+set $creativity ~/./obsidian.AppImage
 
-							      new_window pixel 2
-							      new_float pixel 2
+new_window pixel 2
+new_float pixel 2
 
 # Gaps (if you use i3-gaps)
 gaps inner 3

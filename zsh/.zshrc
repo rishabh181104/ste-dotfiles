@@ -69,6 +69,8 @@ alias nv='nvim'
 alias u='sudo zypper ref && sudo zypper dup'
 alias zpr='zypper'
 alias reboot='sudo reboot now'
+alias run="python3"
+alias clr="clear"
 
 # Colors for ls and grep
 export CLICOLOR=1
