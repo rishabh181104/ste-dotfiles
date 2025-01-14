@@ -4,6 +4,7 @@ require("mason-lspconfig").setup({
 		"rust_analyzer", -- Rust
 		"gopls", -- Go
 		"ts_ls", -- JavaScript/TypeScript
+		"pyright",
 	},
 })
 
