@@ -1,5 +1,6 @@
 -- Mason LSP Configuration
 require("mason-lspconfig").setup({
+	automatic_installation = true,
 	ensure_installed = {
 		"rust_analyzer", -- Rust
 		"gopls", -- Go
