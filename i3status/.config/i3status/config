@@ -8,7 +8,7 @@
 
 general {
 	colors = true
-		interval = 5
+		interval = 1
 		output_format = "i3bar"
 		color_good = "#50FA7B"
 		color_degraded = "#F1FA8C"
@@ -26,12 +26,12 @@ order += "cpu_temperature 0"
 order += "tztime local"
 
 wireless _first_ {
-	format_up = "🟣 W: (%quality at %essid) %ip "
+	format_up = "🟣 W: (%quality at %essid) "
 		format_down = "⚫ W: down "
 }
 
 ethernet _first_ {
-	format_up = "🔴 E: %ip (%speed) "
+	format_up = "🔴 E: (%speed) "
 		format_down = "⚫ E: down "
 }
 
