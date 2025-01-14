@@ -2,7 +2,7 @@ require("rose-pine").setup({
 	variant = "moon", -- auto, main, moon, or dawn
 	dark_variant = "moon", -- main, moon, or dawn
 
-	disable_background = true,
+	disable_background = false,
 	enable = {
 		terminal = true,
 		legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
@@ -46,11 +46,9 @@ require("rose-pine").setup({
 		h6 = "foam",
 	},
 
-	highlight_groups = {
-	},
+	highlight_groups = {},
 
-	before_highlight = function(group, highlight, palette)
-	end,
+	before_highlight = function(group, highlight, palette) end,
 })
 
 vim.cmd("colorscheme rose-pine-moon")
