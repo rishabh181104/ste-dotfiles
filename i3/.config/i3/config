@@ -22,6 +22,7 @@ set $editor ~/./cursor.AppImage
 set $music spotify-launcher
 set $communication wasistlos
 set $creativity ~/./obsidian.AppImage
+set $ide ~/./jetbrains-toolbox
 
 new_window pixel 2
 new_float pixel 2
@@ -67,6 +68,7 @@ bindsym $mod+s exec $music
 bindsym $mod+c exec $communication
 bindsym $mod+o exec $creativity
 bindsym $mod+g exec github-desktop
+bindsym $mod+t exec $ide
 bindsym $mod+Shift+w exec feh --randomize --bg-fill ~/Wallpapers/*
 
 # change focus

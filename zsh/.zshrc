@@ -71,6 +71,7 @@ alias zpr='zypper'
 alias reboot='sudo reboot now'
 alias run="python3"
 alias clr="clear"
+alias recom="sudo zypper install-new-recommends --repo repo-non-free"
 
 # Colors for ls and grep
 export CLICOLOR=1
