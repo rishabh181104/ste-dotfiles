@@ -16,8 +16,8 @@ exec --no-startup-id "feh --randomize --bg-fill ~/Wallpapers/*"
 set $refresh_i3status killall -SIGUSR1 i3status
 
 set $terminal alacritty
-set $browser brave-browser
-set $filemanager thunar
+set $browser firefox
+set $filemanager nautilus
 set $editor cursor.AppImage
 set $music spotify-launcher
 set $communication wasistlos
