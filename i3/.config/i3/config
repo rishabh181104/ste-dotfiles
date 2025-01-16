@@ -69,7 +69,7 @@ bindsym $mod+c exec $communication
 bindsym $mod+o exec $creativity
 bindsym $mod+g exec github-desktop
 bindsym $mod+t exec $ide
-bindsym $mod+Shift+w exec feh --randomize --bg-fill ~/Wallpapers/*
+bindsym $mod+w exec feh --randomize --bg-fill ~/Wallpapers/*
 
 # change focus
 bindsym Mod1+h focus left
@@ -106,14 +106,14 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+Shift+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+Shift+t layout tabbed
 bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+t focus mode_toggle
+bindsym $mod+Shift+w focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
