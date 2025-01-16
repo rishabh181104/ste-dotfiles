@@ -18,11 +18,11 @@ set $refresh_i3status killall -SIGUSR1 i3status
 set $terminal alacritty
 set $browser brave-browser
 set $filemanager thunar
-set $editor ~/./cursor.AppImage
+set $editor cursor.AppImage
 set $music spotify-launcher
 set $communication wasistlos
-set $creativity ~/./obsidian.AppImage
-set $ide ~/./jetbrains-toolbox
+set $creativity obsidian.AppImage
+set $ide jetbrains-toolbox
 
 new_window pixel 2
 new_float pixel 2
