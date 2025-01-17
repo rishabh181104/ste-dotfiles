@@ -236,3 +236,4 @@ export PATH=~/.npm-global/bin:$PATH
 
 # opam configuration
 [[ ! -r /home/ste/.opam/opam-init/init.zsh ]] || source /home/ste/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+export PATH="$HOME/.cargo/bin:$PATH"
