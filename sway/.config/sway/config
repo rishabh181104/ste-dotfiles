@@ -40,8 +40,8 @@ exec --no-startup-id swaybg -i "$(find ~/Wallpapers/ -type f | shuf -n 1)" -m fi
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
-set $terminal alacritty
-set $browser google-chrome
+set $terminal kitty
+set $browser GOOGLE_CHROME_DISABLE_GPU=1 google-chrome-stable
 set $filemanager nautilus
 set $editor cursor.AppImage
 set $music spotify-launcher
