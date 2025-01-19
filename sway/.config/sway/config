@@ -10,8 +10,7 @@ exec --no-startup-id systemctl --user import-environment WAYLAND_DISPLAY XDG_CUR
 # Lock screen
 exec --no-startup-id swayidle timeout 300 'swaylock --color=000000 --ignore-empty-password --show-failed-attempts --indicator' resume 'swaymsg "output * dpms on"'
 
-# Screenshot tool (flameshot has limited support in Wayland; consider grim/slurp or wf-recorder)
-exec --no-startup-id grim -g "$(slurp)" ~/Pictures/screenshot.png
+exec --no-startup-id flameshot
 
 # Network Manager applet (nm-applet)
 exec --no-startup-id nm-applet
