@@ -26,9 +26,3 @@ env TERM=xterm-256color
 # Window decorations and blur (Kitty doesn't support blur by default, but you can use transparency and border settings)
 background_opacity 0.9
 
-
-
-# BEGIN_KITTY_THEME
-# Dracula
-include current-theme.conf
-# END_KITTY_THEME
