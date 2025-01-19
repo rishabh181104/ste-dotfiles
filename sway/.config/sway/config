@@ -183,25 +183,26 @@ bindsym $mod+7 workspace number $ws7
 
 # resize window (you can also use the mouse for that)
 	     mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
-
-# Pressing left will shrink the window’s width.
-# Pressing right will grow the window’s width.
-# Pressing up will shrink the window’s height.
-# Pressing down will grow the window’s height.
 		     bindsym j resize shrink width 10 px or 10 ppt
 			     bindsym k resize grow height 10 px or 10 ppt
 			     bindsym l resize shrink height 10 px or 10 ppt
 			     bindsym semicolon resize grow width 10 px or 10 ppt
 
-# same bindings, but for the arrow keys
 			     bindsym Left resize shrink width 10 px or 10 ppt
 			     bindsym Down resize grow height 10 px or 10 ppt
 			     bindsym Up resize shrink height 10 px or 10 ppt
 			     bindsym Right resize grow width 10 px or 10 ppt
 
-# back to normal: Enter or Escape or $mod+r
 			     bindsym Return mode "default"
 			     bindsym Escape mode "default"
 			     bindsym $mod+r mode "default"
 	     }
+
+# Set border width to 2
+for_window [class=".*"] border pixel 2
+
+# Set border colors
+client.focused          #4C9EEB #4C9EEB #4C9EEB #4C9EEB
+client.focused_inactive #888888 #888888 #888888 #888888
+client.unfocused        #444444 #444444 #444444 #444444
+client.urgent           #FF0000 #FF0000 #FF0000 #FF0000
