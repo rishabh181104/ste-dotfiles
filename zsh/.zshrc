@@ -16,8 +16,34 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 source "${ZINIT_HOME}/zinit.zsh"
+#  ┬  ┌─┐┌─┐┌┬┐  ┌─┐┌┐┌┌─┐┬┌┐┌┌─┐
+#  │  │ │├─┤ ││  ├┤ ││││ ┬││││├┤
+#  ┴─┘└─┘┴ ┴─┴┘  └─┘┘└┘└─┘┴┘└┘└─┘
+autoload -Uz compinit
 
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+for dump in ~/.config/zsh/zcompdump(N.mh+24); do
+	compinit -d ~/.config/zsh/zcompdump
+done
+
+compinit -C -d ~/.config/zsh/zcompdump
+
+autoload -Uz add-zsh-hook
+autoload -Uz vcs_info
+precmd () { vcs_info }
+_comp_options+=(globdots)
+
+zstyle ':completion:*' verbose true
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} 'ma=48;5;197;1'
+zstyle ':completion:*' matcher-list \
+	'm:{a-zA-Z}={A-Za-z}' \
+	'+r:|[._-]=* r:|=*' \
+	'+l:|=*'
+	zstyle ':completion:*:warnings' format "%B%F{red}No matches for:%f %F{magenta}%d%b"
+	zstyle ':completion:*:descriptions' format '%F{yellow}[-- %d --]%f'
+	zstyle ':vcs_info:*' formats ' %B%s-[%F{magenta}%f %F{yellow}%b%f]-'
+
+	zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Add these new lines for syntax highlighting
 zinit ice wait lucid
