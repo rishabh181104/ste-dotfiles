@@ -202,7 +202,7 @@ bindsym $mod+7 workspace number $ws7
 for_window [class=".*"] border pixel 2
 
 # Set border colors
-client.focused          #4C9EEB #4C9EEB #4C9EEB #4C9EEB
+client.focused          #bd93f9 #bd93f9 #bd93f9 #bd93f9
 client.focused_inactive #888888 #888888 #888888 #888888
 client.unfocused        #444444 #444444 #444444 #444444
 client.urgent           #FF0000 #FF0000 #FF0000 #FF0000
