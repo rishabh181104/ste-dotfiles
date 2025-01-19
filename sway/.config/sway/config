@@ -7,8 +7,6 @@ exec --no-startup-id dex --autostart --environment sway
 exec --no-startup-id swaymsg output eDP-1 mode 1920x1080 refresh 60
 
 exec --no-startup-id systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-# Lock screen
-exec --no-startup-id swayidle timeout 300 'swaylock --color=000000 --ignore-empty-password --show-failed-attempts --indicator' resume 'swaymsg "output * dpms on"'
 
 exec --no-startup-id flameshot
 
@@ -36,62 +34,67 @@ exec --no-startup-id swayidle timeout 300 'swaymsg "output * dpms off"' resume '
 
 # Random wallpaper
 exec --no-startup-id swaybg -i "$(find ~/Wallpapers/ -type f | shuf -n 1)" -m fill
+# Lock screen
+exec --no-startup-id swayidle \
+	     timeout 300 'swaylock -i /home/ste/Wallpapers/cat.jpg --color=000000 --ignore-empty-password --show-failed-attempts --indicator' \
+	     resume 'swaymsg "output * dpms on"' \
+	     before-sleep 'swaylock -i /home/ste/Wallpapers/cat.jpg --color=000000 --ignore-empty-password --show-failed-attempts --indicator'
 
-set $refresh_i3status killall -SIGUSR1 i3status
+	     set $refresh_i3status killall -SIGUSR1 i3status
 
-set $terminal kitty
-set $browser GOOGLE_CHROME_DISABLE_GPU=1 google-chrome-stable
-set $filemanager nautilus
-set $editor cursor.AppImage
-set $music spotify-launcher
-set $communication wasistlos
-set $creativity obsidian.AppImage
-set $ide jetbrains-toolbox
+	     set $terminal kitty
+	     set $browser GOOGLE_CHROME_DISABLE_GPU=1 google-chrome-stable
+	     set $filemanager nautilus
+	     set $editor cursor.AppImage
+	     set $music spotify-launcher
+	     set $communication wasistlos
+	     set $creativity obsidian.AppImage
+	     set $ide jetbrains-toolbox
 
 # Gaps (if you use i3-gaps)
-gaps inner 3
-gaps outer 1
+	     gaps inner 3
+	     gaps outer 1
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+	     client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+	     client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+	     client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+	     client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+	     client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-client.background       #F8F8F2
+	     client.background       #F8F8F2
 
 
-bindsym $mod+space exec rofi -show drun
+	     bindsym $mod+space exec rofi -show drun
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+	     bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+	     bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+	     bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+	     bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Increase brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
+	     bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
 
 # Decrease brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
+	     bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 
 
 # Navigate to the left and right virtual desktops
-bindsym $mod+j workspace prev
-bindsym $mod+k workspace next
+	     bindsym $mod+j workspace prev
+	     bindsym $mod+k workspace next
 
-bindsym $mod+Return exec $terminal
-bindsym $mod+q kill
-bindsym $mod+l exec i3lock
-bindsym $mod+b exec $browser
-bindsym $mod+e exec $filemanager
-bindsym $mod+u exec $editor
-bindsym $mod+s exec $music
-bindsym $mod+c exec $communication
-bindsym $mod+o exec $creativity
-bindsym $mod+g exec github-desktop
-bindsym $mod+t exec $ide
-bindsym $mod+w exec feh --randomize --bg-fill ~/Wallpapers/*
+	     bindsym $mod+Return exec $terminal
+	     bindsym $mod+q kill
+	     bindsym $mod+l exec swaylock -i /home/ste/Wallpapers/cat.jpg
+	     bindsym $mod+b exec $browser
+	     bindsym $mod+e exec $filemanager
+	     bindsym $mod+u exec $editor
+	     bindsym $mod+s exec $music
+	     bindsym $mod+c exec $communication
+	     bindsym $mod+o exec $creativity
+	     bindsym $mod+g exec github-desktop
+	     bindsym $mod+t exec $ide
+	     bindsym $mod+w exec feh --randomize --bg-fill ~/Wallpapers/*
 
 # change focus
 bindsym Mod1+h focus left
@@ -163,42 +166,42 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
+	     bindsym $mod+Shift+1 move container to workspace number $ws1
+	     bindsym $mod+Shift+2 move container to workspace number $ws2
+	     bindsym $mod+Shift+3 move container to workspace number $ws3
+	     bindsym $mod+Shift+4 move container to workspace number $ws4
+	     bindsym $mod+Shift+5 move container to workspace number $ws5
+	     bindsym $mod+Shift+6 move container to workspace number $ws6
+	     bindsym $mod+Shift+7 move container to workspace number $ws7
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+	     bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+r exec "swaymsg reload && notify-send 'Sway' 'Configuration Reloaded Successfully!'"
+	     bindsym $mod+r exec "swaymsg reload && notify-send 'Sway' 'Configuration Reloaded Successfully!'"
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+	     bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+	     mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
 
 # Pressing left will shrink the window’s width.
 # Pressing right will grow the window’s width.
 # Pressing up will shrink the window’s height.
 # Pressing down will grow the window’s height.
-	bindsym j resize shrink width 10 px or 10 ppt
-		bindsym k resize grow height 10 px or 10 ppt
-		bindsym l resize shrink height 10 px or 10 ppt
-		bindsym semicolon resize grow width 10 px or 10 ppt
+		     bindsym j resize shrink width 10 px or 10 ppt
+			     bindsym k resize grow height 10 px or 10 ppt
+			     bindsym l resize shrink height 10 px or 10 ppt
+			     bindsym semicolon resize grow width 10 px or 10 ppt
 
 # same bindings, but for the arrow keys
-		bindsym Left resize shrink width 10 px or 10 ppt
-		bindsym Down resize grow height 10 px or 10 ppt
-		bindsym Up resize shrink height 10 px or 10 ppt
-		bindsym Right resize grow width 10 px or 10 ppt
+			     bindsym Left resize shrink width 10 px or 10 ppt
+			     bindsym Down resize grow height 10 px or 10 ppt
+			     bindsym Up resize shrink height 10 px or 10 ppt
+			     bindsym Right resize grow width 10 px or 10 ppt
 
 # back to normal: Enter or Escape or $mod+r
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
-		bindsym $mod+r mode "default"
-}
+			     bindsym Return mode "default"
+			     bindsym Escape mode "default"
+			     bindsym $mod+r mode "default"
+	     }
