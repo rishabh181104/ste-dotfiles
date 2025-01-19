@@ -17,6 +17,7 @@
 		],
 		"modules-right": [
 			"idle_inhibitor",
+		"custom/zypper",
 		"pulseaudio",
 		"network",
 		"power-profiles-daemon",
@@ -73,6 +74,14 @@
 				"activated": "",
 				"deactivated": ""
 			}
+		},
+		"custom/zypper": {
+			"format": "{} ",
+			"interval": 3600,
+			"exec": "zypper lu | grep 'v \\+|' | wc -l; echo 'packages to update'",
+			"exec-if": "exit 0",
+			"on-click": "exec alacritty -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
+			"signal": 8
 		},
 		"tray": {
 			// "icon-size": 21,
