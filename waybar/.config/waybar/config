@@ -181,11 +181,11 @@
 			},
 			"escape": true,
 			"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-													   // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+										   // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
 		},
 		"custom/power": {
 			"format" : "⏻ ",
-			"tooltip": false,
+			"tooltip": true,
 			"menu": "on-click",
 			"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 			"menu-actions": {
