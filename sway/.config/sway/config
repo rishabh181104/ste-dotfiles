@@ -37,7 +37,7 @@ exec --no-startup-id swayidle \
 	     resume 'swaymsg "output * dpms on"' \
 	     before-sleep 'swaylock -i /home/ste/Wallpapers/cat.jpg --color=000000 --ignore-empty-password --show-failed-attempts --indicator'
 
-	     set $terminal kitty
+	     set $terminal alacritty
 	     set $browser GOOGLE_CHROME_DISABLE_GPU=1 google-chrome-stable
 	     set $filemanager nautilus
 	     set $editor cursor.AppImage
