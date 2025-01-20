@@ -81,6 +81,7 @@ exec --no-startup-id swayidle \
 	     bindsym $mod+Return exec $terminal
 	     bindsym $mod+q kill
 	     bindsym $mod+l exec swaylock -i /home/ste/Wallpapers/cat.jpg
+	     bindsym Print exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +'%Y-%m-%d-%H%M%S').png
 	     bindsym $mod+b exec $browser
 	     bindsym $mod+e exec $filemanager
 	     bindsym $mod+u exec $editor
