@@ -62,7 +62,7 @@ exec --no-startup-id swayidle \
 	     client.background       #F8F8F2
 
 
-	     bindsym $mod+space exec rofi -show drun
+	     bindsym $mod+space exec wofi --show drun
 
 	     bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 	     bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
