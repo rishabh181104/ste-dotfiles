@@ -1,6 +1,8 @@
 -- Mason LSP Configuration
 require("mason-lspconfig").setup({
-	automatic_installation = true,
+	automatic_installation = {
+		exclude = { "ocamllsp" }, -- Exclude ocamllsp from automatic installation
+	},
 	ensure_installed = {
 		"rust_analyzer", -- Rust
 		"gopls", -- Go
@@ -39,6 +41,7 @@ require("mason-lspconfig").setup_handlers({
 
 -- Mason Null-LS Configuration
 require("mason-null-ls").setup({
+	automatic_installation = true, -- Enable automatic installation for Null-LS sources
 	ensure_installed = {
 		-- Formatters
 		"black",
@@ -50,7 +53,6 @@ require("mason-null-ls").setup({
 		"flake8",
 		"eslint_d",
 	},
-	automatic_installation = true,
 })
 
 -- Null-LS Configuration
