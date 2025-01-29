@@ -26,11 +26,9 @@ input "type:touchpad" {
 	tap enabled
 }
 
-# Disable screensaver, blanking, and power management
-exec --no-startup-id swayidle timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-
 # Random wallpaper
 exec --no-startup-id swaybg -i "$(find ~/Wallpapers/ -type f | shuf -n 1)" -m fill
+
 # Lock screen
 exec --no-startup-id swayidle \
 	     timeout 300 'swaylock -i /home/ste/Wallpapers/cat.jpg --color=000000 --ignore-empty-password --show-failed-attempts --indicator' \
