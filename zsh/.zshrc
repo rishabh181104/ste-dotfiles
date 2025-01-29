@@ -90,6 +90,7 @@ export VISUAL=nvim
 alias spico='sudo pico'
 alias snano='sudo nano'
 alias n='nvim'
+alias vim='nvim'
 alias nvi='nvim'
 alias nv='nvim'
 alias u='sudo zypper ref && sudo zypper dup'
