@@ -9,8 +9,7 @@
 		"modules-left": [
 			"hyprland/workspaces",
 		"hyprland/mode",
-		"sway/scratchpad",
-		"custom/media"
+		"hyprland/scratchpad",
 		],
 		"modules-center": [
 			"hyprland/window"
@@ -63,7 +62,7 @@
 		"hyprland/mode": {
 			"format": "<span style=\"italic\">{}</span>"
 		},
-		"sway/scratchpad": {
+		"hyprland/scratchpad": {
 			"format": "{icon} {count}",
 			"show-empty": false,
 			"format-icons": ["", ""],
@@ -170,18 +169,6 @@
 				"default": ["", "", ""]
 			},
 			"on-click": "pavucontrol"
-		},
-		"custom/media": {
-			"format": "{icon} {text}",
-			"return-type": "json",
-			"max-length": 40,
-			"format-icons": {
-				"spotify": "",
-				"default": "🎜"
-			},
-			"escape": true,
-			"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-										   // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
 		},
 		"custom/power": {
 			"format" : "⏻ ",

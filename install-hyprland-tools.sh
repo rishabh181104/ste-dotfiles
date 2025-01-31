@@ -15,9 +15,7 @@ PACKAGES=(
 	swaybg
 	alacritty
 	hyprcursor
-	hyprlang
 	noto-fonts
-	noto-fonts-emoji
 	hyprpicker
 	nwg-look
 	jq
@@ -25,7 +23,6 @@ PACKAGES=(
 	mpv
 	playerctl
 	pamixer
-	noise-suppression-for-voice
 	NetworkManager
 	NetworkManager-applet
 	neovim
@@ -33,7 +30,6 @@ PACKAGES=(
 	power-profiles-daemon
 	waybar
 	papirus-icon-theme
-	ttf-font-awesome
 	starship
 	grim
 	slurp
