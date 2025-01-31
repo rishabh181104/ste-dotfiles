@@ -3,6 +3,7 @@
 # List of packages to install
 PACKAGES=(
 	hyprland
+	hyprlock
 	wl-clipboard
 	wf-recorder
 	wofi

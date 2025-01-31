@@ -1,6 +1,10 @@
 if [ -f /usr/bin/fastfetch ]; then
 	fastfetch
 fi
+
+if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
+	exec Hyprland
+fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
