@@ -5,7 +5,11 @@ PACKAGES=(
 	hyprland
 	wl-clipboard
 	wf-recorder
-	rofi
+	wofi
+	libhyprlang2
+	libhyprlang2-debuginfo
+	pavucontrol
+	hyprland-qtutils
 	wlogout
 	dunst
 	swaybg
@@ -33,6 +37,8 @@ PACKAGES=(
 	starship
 	grim
 	slurp
+	nautilus
+	sddm
 )
 
 # Function to install packages
