@@ -19,7 +19,7 @@ exec --no-startup-id "feh --randomize --bg-fill ~/Wallpapers/*"
 set $refresh_i3status killall -SIGUSR1 i3status
 
 set $terminal alacritty
-set $browser google-chrome-stable --use-gl=desktop --enable-graphics-vulkan --ignore-gpu-blacklist --site-per-process --enable-direct-write
+set $browser __GLX_VENDOR_LIBRARY_NAME=nvidia google-chrome-stable --enable-accelerated-video-decode --enable-accelerated-video-encode
 set $filemanager dolphin
 set $editor cursor.AppImage
 set $music spotify-launcher
