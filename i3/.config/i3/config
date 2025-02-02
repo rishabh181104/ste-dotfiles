@@ -27,15 +27,15 @@ set $communication wasistlos
 set $creativity obsidian.AppImage
 set $ide jetbrains-toolbox
 
-new_window pixel 2
-new_float pixel 2
+new_window pixel 4
+new_float pixel 4
 
 # Gaps (if you use i3-gaps)
-gaps inner 3
-gaps outer 1
+gaps inner 1
+gaps outer 3
 
-# class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+# Set the border color and sizes
+client.focused          #8B62D4 #8B62D4 #F8F8F2 #8B62D4   #8B62D4
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
