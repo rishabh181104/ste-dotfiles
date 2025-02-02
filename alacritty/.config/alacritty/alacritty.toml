@@ -23,16 +23,16 @@ TERM = "xterm-256color"
 
 [font]
 #glyph_offset = { x = 1, y = 0 }
-normal.family = "MesloLGS Nerd Font Mono"
+normal.family = "Fira Code"
 normal.style = "Regular"
 size = 14.0
 
 [font.bold]
-family = "MesloLGS Nerd Font Mono"
+family = "Fira Code"
 style = "Bold"
 
 [font.italic]
-family = "MesloLGS Nerd Font Mono"
+family = "Fira Code"
 style = "Italic"
 
 [colors.primary]

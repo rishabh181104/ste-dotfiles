@@ -20,7 +20,7 @@ set $refresh_i3status killall -SIGUSR1 i3status
 
 set $terminal alacritty
 set $browser google-chrome-stable --use-gl=desktop --enable-graphics-vulkan --ignore-gpu-blacklist --site-per-process --enable-direct-write
-set $filemanager nautilus
+set $filemanager dolphin
 set $editor cursor.AppImage
 set $music spotify-launcher
 set $communication wasistlos
