@@ -18,7 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- General plugins
 	"theprimeagen/harpoon",
-	{ "navarasu/onedark.nvim", name = "onedark" },
+	{ "AlexvZyl/nordic.nvim", name = "nordic" },
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope.nvim",
 	"nvim-neo-tree/neo-tree.nvim",
@@ -61,7 +61,7 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = "python", -- or specify languages
+				auto_install = true, -- Installs missing parsers only when needed
 				highlight = { enable = true },
 				indent = { enable = true },
 				incremental_selection = { enable = true },
