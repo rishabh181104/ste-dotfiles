@@ -1,52 +1,79 @@
-require("nordic").setup({
-	-- This callback can be used to override the colors used in the base palette.
-	on_palette = function(palette) end,
-	-- This callback can be used to override the colors used in the extended palette.
-	after_palette = function(palette) end,
-	-- This callback can be used to override highlights before they are applied.
-	on_highlight = function(highlights, palette) end,
-	-- Enable bold keywords.
-	bold_keywords = false,
-	-- Enable italic comments.
-	italic_comments = true,
-	-- Enable editor background transparency.
-	transparent = {
-		-- Enable transparent background.
-		bg = false,
-		-- Enable transparent background for floating windows.
-		float = false,
+require("rose-pine").setup({
+	variant = "main", -- auto, main, moon, or dawn
+	dark_variant = "main", -- main, moon, or dawn
+	dim_inactive_windows = true,
+	extend_background_behind_borders = true,
+
+	enable = {
+		terminal = true,
+		legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+		migrations = true, -- Handle deprecated options automatically
 	},
-	-- Enable brighter float border.
-	bright_border = false,
-	-- Reduce the overall amount of blue in the theme (diverges from base Nord).
-	reduced_blue = true,
-	-- Swap the dark background with the normal one.
-	swap_backgrounds = false,
-	-- Cursorline options.  Also includes visual/selection.
-	cursorline = {
-		-- Bold font in cursorline.
-		bold = false,
-		-- Bold cursorline number.
-		bold_number = true,
-		-- Available styles: 'dark', 'light'.
-		theme = "dark",
-		-- Blending the cursorline bg with the buffer bg.
-		blend = 0.85,
+
+	styles = {
+		bold = true,
+		italic = true,
+		transparency = true,
 	},
-	noice = {
-		-- Available styles: `classic`, `flat`.
-		style = "classic",
+
+	groups = {
+		border = "muted",
+		link = "iris",
+		panel = "surface",
+
+		error = "love",
+		hint = "iris",
+		info = "foam",
+		note = "pine",
+		todo = "rose",
+		warn = "gold",
+
+		git_add = "foam",
+		git_change = "rose",
+		git_delete = "love",
+		git_dirty = "rose",
+		git_ignore = "muted",
+		git_merge = "iris",
+		git_rename = "pine",
+		git_stage = "iris",
+		git_text = "rose",
+		git_untracked = "subtle",
+
+		h1 = "iris",
+		h2 = "foam",
+		h3 = "rose",
+		h4 = "gold",
+		h5 = "pine",
+		h6 = "foam",
 	},
-	telescope = {
-		-- Available styles: `classic`, `flat`.
-		style = "flat",
+
+	palette = {
+		-- Override the builtin palette per variant
+		-- moon = {
+		--     base = '#18191a',
+		--     overlay = '#363738',
+		-- },
 	},
-	leap = {
-		-- Dims the backdrop when using leap.
-		dim_backdrop = false,
+
+	highlight_groups = {
+		-- Comment = { fg = "foam" },
+		-- VertSplit = { fg = "muted", bg = "muted" },
 	},
-	ts_context = {
-		-- Enables dark background for treesitter-context window
-		dark_background = true,
-	},
+
+	before_highlight = function(group, highlight, palette)
+		-- Disable all undercurls
+		-- if highlight.undercurl then
+		--     highlight.undercurl = false
+		-- end
+		--
+		-- Change palette colour
+		-- if highlight.fg == palette.pine then
+		--     highlight.fg = palette.foam
+		-- end
+	end,
 })
+
+-- vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme rose-pine-main")
+-- vim.cmd("colorscheme rose-pine-moon")
+-- vim.cmd("colorscheme rose-pine-dawn")
