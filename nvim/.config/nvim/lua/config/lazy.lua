@@ -18,7 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- General plugins
 	"theprimeagen/harpoon",
-	{ "rose-pine/neovim", name = "rose-pine" },
+	{ "navarasu/onedark.nvim", name = "onedark" },
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope.nvim",
 	"nvim-neo-tree/neo-tree.nvim",
