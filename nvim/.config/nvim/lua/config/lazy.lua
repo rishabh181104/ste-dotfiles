@@ -14,12 +14,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Plugin setup
 require("lazy").setup({
-	-- General plugins
 	"theprimeagen/harpoon",
-	{ "rose-pine/neovim", name = "rose-pine" },
-	-- { "ellisonleao/gruvbox.nvim", name = "gruvbox" },
+	-- { "rose-pine/neovim", name = "rose-pine" },
+	{ "scottmckendry/cyberdream.nvim", name = "cyberdream" },
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope.nvim",
 	"nvim-neo-tree/neo-tree.nvim",
