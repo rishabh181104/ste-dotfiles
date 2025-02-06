@@ -1,12 +1,12 @@
 require("cyberdream").setup({
-	variant = "default",
+	variant = "dark",
 
-	transparent = false,
+	transparent = true,
 
 	saturation = 1,
-	italic_comments = false,
+	italic_comments = true,
 	hide_fillchars = false,
-	borderless_pickers = false,
+	borderless_pickers = true,
 	terminal_colors = true,
 	cache = false,
 	highlights = {
