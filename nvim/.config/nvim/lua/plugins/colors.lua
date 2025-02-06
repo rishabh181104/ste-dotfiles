@@ -13,7 +13,7 @@ require("rose-pine").setup({
 	styles = {
 		bold = true,
 		italic = true,
-		transparency = true,
+		transparency = false,
 	},
 
 	groups = {
@@ -46,34 +46,6 @@ require("rose-pine").setup({
 		h5 = "pine",
 		h6 = "foam",
 	},
-
-	palette = {
-		-- Override the builtin palette per variant
-		-- moon = {
-		--     base = '#18191a',
-		--     overlay = '#363738',
-		-- },
-	},
-
-	highlight_groups = {
-		-- Comment = { fg = "foam" },
-		-- VertSplit = { fg = "muted", bg = "muted" },
-	},
-
-	before_highlight = function(group, highlight, palette)
-		-- Disable all undercurls
-		-- if highlight.undercurl then
-		--     highlight.undercurl = false
-		-- end
-		--
-		-- Change palette colour
-		-- if highlight.fg == palette.pine then
-		--     highlight.fg = palette.foam
-		-- end
-	end,
 })
 
--- vim.cmd("colorscheme rose-pine")
 vim.cmd("colorscheme rose-pine-main")
--- vim.cmd("colorscheme rose-pine-moon")
--- vim.cmd("colorscheme rose-pine-dawn")

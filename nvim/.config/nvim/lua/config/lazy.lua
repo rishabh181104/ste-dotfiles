@@ -19,6 +19,7 @@ require("lazy").setup({
 	-- General plugins
 	"theprimeagen/harpoon",
 	{ "rose-pine/neovim", name = "rose-pine" },
+	-- { "ellisonleao/gruvbox.nvim", name = "gruvbox" },
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope.nvim",
 	"nvim-neo-tree/neo-tree.nvim",
