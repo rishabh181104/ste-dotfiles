@@ -35,30 +35,61 @@ style = "Bold"
 family = "Fira Code"
 style = "Italic"
 
-[colors.primary]
-background = '#282a36'
-foreground = '#f8f8f2'
+
+# cyberdream theme
+[colors.bright]
+black = "0x3c4048"
+blue = "0x5ea1ff"
+cyan = "0x5ef1ff"
+green = "0x5eff6c"
+magenta = "0xbd5eff"
+red = "0xff6e5e"
+white = "0xffffff"
+yellow = "0xf1ff5e"
 
 [colors.normal]
-black = '#21222c'
-red = '#ff5555'
-green = '#50fa7b'
-yellow = '#f1fa8c'
-blue = '#bd93f9'
-magenta = '#ff79c6'
-cyan = '#8be9fd'
-white = '#f8f8f2'
+black = "0x16181a"
+blue = "0x5ea1ff"
+cyan = "0x5ef1ff"
+green = "0x5eff6c"
+magenta = "0xbd5eff"
+red = "0xff6e5e"
+white = "0xffffff"
+yellow = "0xf1ff5e"
 
-[colors.bright]
-black = '#6272a4'
-red = '#ff6e6e'
-green = '#69ff94'
-yellow = '#ffffa5'
-blue = '#d6acff'
-magenta = '#ff92df'
-cyan = '#a4ffff'
-white = '#ffffff'
+[colors.primary]
+background = "0x16181a"
+foreground = "0xffffff"
 
 [colors.selection]
-text = '#282a36'
-background = '#44475a'
+background = "0x3c4048"
+foreground = "0xffffff"
+
+# # Dracula theme
+# [colors.primary]
+# background = '#282a36'
+# foreground = '#f8f8f2'
+#
+# [colors.normal]
+# black = '#21222c'
+# red = '#ff5555'
+# green = '#50fa7b'
+# yellow = '#f1fa8c'
+# blue = '#bd93f9'
+# magenta = '#ff79c6'
+# cyan = '#8be9fd'
+# white = '#f8f8f2'
+#
+# [colors.bright]
+# black = '#6272a4'
+# red = '#ff6e6e'
+# green = '#69ff94'
+# yellow = '#ffffa5'
+# blue = '#d6acff'
+# magenta = '#ff92df'
+# cyan = '#a4ffff'
+# white = '#ffffff'
+#
+# [colors.selection]
+# text = '#282a36'
+# background = '#44475a'
