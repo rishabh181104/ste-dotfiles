@@ -73,6 +73,7 @@ alias v="nvim"
 alias nvi="nvim"
 alias clr="clear"
 alias u="sudo zypper ref && sudo zypper dup -y"
+alias reboot="sudo reboot"
 
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
 export CLICOLOR=1
