@@ -66,7 +66,13 @@ export EDITOR=nvim
 export VISUAL=nvim
 alias spico='sudo pico'
 alias snano='sudo nano'
-alias vim='nvim'
+alias sn="sudo nvim"
+alias n="nvim"
+alias nv="nvim"
+alias v="nvim"
+alias nvi="nvim"
+alias clr="clear"
+alias u="sudo zypper ref && sudo zypper dup -y"
 
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
 export CLICOLOR=1
@@ -75,13 +81,13 @@ export LS_COLORS='no=00:fi=00:di=00;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 
 # Check if ripgrep is installed
 if command -v rg &> /dev/null; then
-    # Alias grep to rg if ripgrep is installed
-    alias grep='rg'
+	# Alias grep to rg if ripgrep is installed
+	alias grep='rg'
 else
-    # Alias grep to /usr/bin/grep with GREP_OPTIONS if ripgrep is not installed
-    alias grep="/usr/bin/grep $GREP_OPTIONS"
-fi
-unset GREP_OPTIONS
+	# Alias grep to /usr/bin/grep with GREP_OPTIONS if ripgrep is not installed
+	alias grep="/usr/bin/grep $GREP_OPTIONS"
+	fi
+	unset GREP_OPTIONS
 
 # Color for manpages in less makes manpages a little easier to read
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -238,10 +244,10 @@ alias kssh="kitty +kitten ssh"
 # alias to cleanup unused docker containers, images, networks, and volumes
 
 alias docker-clean=' \
-  docker container prune -f ; \
-  docker image prune -f ; \
-  docker network prune -f ; \
-  docker volume prune -f '
+	docker container prune -f ; \
+	docker image prune -f ; \
+	docker network prune -f ; \
+	docker volume prune -f '
 
 #######################################################
 # SPECIAL FUNCTIONS
@@ -251,18 +257,18 @@ extract() {
 	for archive in "$@"; do
 		if [ -f "$archive" ]; then
 			case $archive in
-			*.tar.bz2) tar xvjf $archive ;;
-			*.tar.gz) tar xvzf $archive ;;
-			*.bz2) bunzip2 $archive ;;
-			*.rar) rar x $archive ;;
-			*.gz) gunzip $archive ;;
-			*.tar) tar xvf $archive ;;
-			*.tbz2) tar xvjf $archive ;;
-			*.tgz) tar xvzf $archive ;;
-			*.zip) unzip $archive ;;
-			*.Z) uncompress $archive ;;
-			*.7z) 7z x $archive ;;
-			*) echo "don't know how to extract '$archive'..." ;;
+				*.tar.bz2) tar xvjf $archive ;;
+				*.tar.gz) tar xvzf $archive ;;
+				*.bz2) bunzip2 $archive ;;
+				*.rar) rar x $archive ;;
+				*.gz) gunzip $archive ;;
+				*.tar) tar xvf $archive ;;
+				*.tbz2) tar xvjf $archive ;;
+				*.tgz) tar xvzf $archive ;;
+				*.zip) unzip $archive ;;
+				*.Z) uncompress $archive ;;
+				*.7z) 7z x $archive ;;
+				*) echo "don't know how to extract '$archive'..." ;;
 			esac
 		else
 			echo "'$archive' is not a valid file!"
@@ -284,23 +290,23 @@ ftext() {
 
 # Copy file with a progress bar
 cpp() {
-    set -e
-    strace -q -ewrite cp -- "${1}" "${2}" 2>&1 |
-    awk '{
-        count += $NF
-        if (count % 10 == 0) {
-            percent = count / total_size * 100
-            printf "%3d%% [", percent
-            for (i=0;i<=percent;i++)
-                printf "="
-            printf ">"
-            for (i=percent;i<100;i++)
-                printf " "
-            printf "]\r"
-        }
-    }
-    END { print "" }' total_size="$(stat -c '%s' "${1}")" count=0
-}
+	set -e
+	strace -q -ewrite cp -- "${1}" "${2}" 2>&1 |
+		awk '{
+			count += $NF
+			if (count % 10 == 0) {
+				percent = count / total_size * 100
+				printf "%3d%% [", percent
+				for (i=0;i<=percent;i++)
+					printf "="
+					printf ">"
+					for (i=percent;i<100;i++)
+						printf " "
+						printf "]\r"
+					}
+				}
+			END { print "" }' total_size="$(stat -c '%s' "${1}")" count=0
+		}
 
 # Copy and go to the directory
 cpg() {
@@ -357,109 +363,109 @@ pwdtail() {
 
 # Show the current distribution
 distribution () {
-    local dtype="unknown"  # Default to unknown
+	local dtype="unknown"  # Default to unknown
 
     # Use /etc/os-release for modern distro identification
     if [ -r /etc/os-release ]; then
-        source /etc/os-release
-        case $ID in
-            fedora|rhel|centos)
-                dtype="redhat"
-                ;;
-            sles|opensuse*)
-                dtype="suse"
-                ;;
-            ubuntu|debian)
-                dtype="debian"
-                ;;
-            gentoo)
-                dtype="gentoo"
-                ;;
-            arch|manjaro)
-                dtype="arch"
-                ;;
-            slackware)
-                dtype="slackware"
-                ;;
-            *)
-                # Check ID_LIKE only if dtype is still unknown
-                if [ -n "$ID_LIKE" ]; then
-                    case $ID_LIKE in
-                        *fedora*|*rhel*|*centos*)
-                            dtype="redhat"
-                            ;;
-                        *sles*|*opensuse*)
-                            dtype="suse"
-                            ;;
-                        *ubuntu*|*debian*)
-                            dtype="debian"
-                            ;;
-                        *gentoo*)
-                            dtype="gentoo"
-                            ;;
-                        *arch*)
-                            dtype="arch"
-                            ;;
-                        *slackware*)
-                            dtype="slackware"
-                            ;;
-                    esac
-                fi
+	    source /etc/os-release
+	    case $ID in
+		    fedora|rhel|centos)
+			    dtype="redhat"
+			    ;;
+		    sles|opensuse*)
+			    dtype="suse"
+			    ;;
+		    ubuntu|debian)
+			    dtype="debian"
+			    ;;
+		    gentoo)
+			    dtype="gentoo"
+			    ;;
+		    arch|manjaro)
+			    dtype="arch"
+			    ;;
+		    slackware)
+			    dtype="slackware"
+			    ;;
+		    *)
+			    # Check ID_LIKE only if dtype is still unknown
+			    if [ -n "$ID_LIKE" ]; then
+				    case $ID_LIKE in
+					    *fedora*|*rhel*|*centos*)
+						    dtype="redhat"
+						    ;;
+					    *sles*|*opensuse*)
+						    dtype="suse"
+						    ;;
+					    *ubuntu*|*debian*)
+						    dtype="debian"
+						    ;;
+					    *gentoo*)
+						    dtype="gentoo"
+						    ;;
+					    *arch*)
+						    dtype="arch"
+						    ;;
+					    *slackware*)
+						    dtype="slackware"
+						    ;;
+				    esac
+			    fi
 
-                # If ID or ID_LIKE is not recognized, keep dtype as unknown
-                ;;
-        esac
-    fi
+		# If ID or ID_LIKE is not recognized, keep dtype as unknown
+		;;
+esac
+		fi
 
-    echo $dtype
-}
+		echo $dtype
+	}
 
 
-DISTRIBUTION=$(distribution)
-if [ "$DISTRIBUTION" = "redhat" ] || [ "$DISTRIBUTION" = "arch" ]; then
-      alias cat='bat'
-else
-      alias cat='batcat'
-fi 
+	DISTRIBUTION=$(distribution)
+	if [ "$DISTRIBUTION" = "redhat" ] || [ "$DISTRIBUTION" = "arch" ]; then
+		alias cat='bat'
+	else
+		alias cat='batcat'
+	fi 
 
 # Show the current version of the operating system
 ver() {
-    local dtype
-    dtype=$(distribution)
+	local dtype
+	dtype=$(distribution)
 
-    case $dtype in
-        "redhat")
-            if [ -s /etc/redhat-release ]; then
-                cat /etc/redhat-release
-            else
-                cat /etc/issue
-            fi
-            uname -a
-            ;;
-        "suse")
-            cat /etc/SuSE-release
-            ;;
-        "debian")
-            lsb_release -a
-            ;;
-        "gentoo")
-            cat /etc/gentoo-release
-            ;;
-        "arch")
-            cat /etc/os-release
-            ;;
-        "slackware")
-            cat /etc/slackware-version
-            ;;
-        *)
-            if [ -s /etc/issue ]; then
-                cat /etc/issue
-            else
-                echo "Error: Unknown distribution"
-                exit 1
-            fi
-            ;;
-    esac
+	case $dtype in
+		"redhat")
+			if [ -s /etc/redhat-release ]; then
+				cat /etc/redhat-release
+			else
+				cat /etc/issue
+			fi
+			uname -a
+			;;
+		"suse")
+			cat /etc/SuSE-release
+			;;
+		"debian")
+			lsb_release -a
+			;;
+		"gentoo")
+			cat /etc/gentoo-release
+			;;
+		"arch")
+			cat /etc/os-release
+			;;
+		"slackware")
+			cat /etc/slackware-version
+			;;
+		*)
+			if [ -s /etc/issue ]; then
+				cat /etc/issue
+			else
+				echo "Error: Unknown distribution"
+				exit 1
+			fi
+			;;
+	esac
 }
 
 # Automatically install the needed support files for this .bashrc file
@@ -500,14 +506,14 @@ install_bashrc_support() {
 # IP address lookup
 alias whatismyip="whatsmyip"
 function whatsmyip () {
-    # Internal IP Lookup.
-    if command -v ip &> /dev/null; then
-        echo -n "Internal IP: "
-        ip addr show wlan0 | grep "inet " | awk '{print $2}' | cut -d/ -f1
-    else
-        echo -n "Internal IP: "
-        ifconfig wlan0 | grep "inet " | awk '{print $2}'
-    fi
+	# Internal IP Lookup.
+	if command -v ip &> /dev/null; then
+		echo -n "Internal IP: "
+		ip addr show wlan0 | grep "inet " | awk '{print $2}' | cut -d/ -f1
+	else
+		echo -n "Internal IP: "
+		ifconfig wlan0 | grep "inet " | awk '{print $2}'
+	fi
 
     # External IP Lookup
     echo -n "External IP: "
@@ -597,22 +603,22 @@ lazyg() {
 }
 
 function hb {
-    if [ $# -eq 0 ]; then
-        echo "No file path specified."
-        return
-    elif [ ! -f "$1" ]; then
-        echo "File path does not exist."
-        return
-    fi
+	if [ $# -eq 0 ]; then
+		echo "No file path specified."
+		return
+	elif [ ! -f "$1" ]; then
+		echo "File path does not exist."
+		return
+	fi
 
-    uri="http://bin.christitus.com/documents"
-    response=$(curl -s -X POST -d @"$1" "$uri")
-    if [ $? -eq 0 ]; then
-        hasteKey=$(echo $response | jq -r '.key')
-        echo "http://bin.christitus.com/$hasteKey"
-    else
-        echo "Failed to upload the document."
-    fi
+	uri="http://bin.christitus.com/documents"
+	response=$(curl -s -X POST -d @"$1" "$uri")
+	if [ $? -eq 0 ]; then
+		hasteKey=$(echo $response | jq -r '.key')
+		echo "http://bin.christitus.com/$hasteKey"
+	else
+		echo "Failed to upload the document."
+	fi
 }
 
 #######################################################
@@ -623,8 +629,8 @@ alias hug="hugo server -F --bind=10.0.0.97 --baseURL=http://10.0.0.97"
 
 # Check if the shell is interactive
 if [[ $- == *i* ]]; then
-    # Bind Ctrl+f to insert 'zi' followed by a newline
-    bind '"\C-f":"zi\n"'
+	# Bind Ctrl+f to insert 'zi' followed by a newline
+	bind '"\C-f":"zi\n"'
 fi
 
 export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
