@@ -12,6 +12,7 @@ exec --no-startup-id flameshot
 
 # Network Manager applet (nm-applet)
 exec --no-startup-id nm-applet
+exec --no-startup-id waybar
 
 # Bluetooth applet (blueman-applet doesn't fully support Wayland; consider `blueman-manager`)
 exec --no-startup-id blueman-applet
