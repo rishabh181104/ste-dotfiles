@@ -183,7 +183,7 @@ static const Key keys[] = {
 
 	{MODKEY, XK_space, spawn, SHCMD("rofi -show drun")},
 	{MODKEY, XK_Return, spawn, SHCMD("alacritty")},
-	{MODKEY, XK_b, spawn, SHCMD("brave-browser")},
+	{MODKEY, XK_b, spawn, SHCMD("__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia brave-browser")},
 	{MODKEY, XK_c, spawn, SHCMD("wasistlos")},
 	{MODKEY, XK_l, spawn, SHCMD("i3lock")},
 	{MODKEY, XK_u, spawn, SHCMD("cursor.AppImage")},
