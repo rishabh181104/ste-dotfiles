@@ -38,7 +38,7 @@ alias mkdir='mkdir -p'
 
 # Functions
 function fish_greeting
-	echo "Welcome to Fish Shell, $(whoami)!"
+	echo "Welcome to Fish Shell, BRUV :)"
 end
 
 function mkcd
