@@ -183,7 +183,7 @@ static const Key keys[] = {
 
 	{MODKEY, XK_space, spawn, SHCMD("rofi -show drun")},
 	{MODKEY, XK_Return, spawn, SHCMD("alacritty")},
-	{MODKEY, XK_b, spawn, SHCMD("chromium")},
+	{MODKEY, XK_b, spawn, SHCMD("brave-browser")},
 	{MODKEY, XK_c, spawn, SHCMD("wasistlos")},
 	{MODKEY, XK_l, spawn, SHCMD("i3lock")},
 	{MODKEY, XK_u, spawn, SHCMD("cursor.AppImage")},
