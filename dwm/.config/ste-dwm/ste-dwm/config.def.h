@@ -181,7 +181,7 @@ static const Key keys[] = {
 	{MODKEY, XK_u, spawn,
 		SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
-	{MODKEY, XK_space, spawn, SHCMD("rofi -show drun")},
+	{MODKEY, XK_space, spawn, SHCMD("dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-20' -p 'dmenu%'")},
 	{MODKEY, XK_Return, spawn, SHCMD("alacritty")},
 	{MODKEY, XK_b, spawn, SHCMD("thorium-browser")},
 	{MODKEY, XK_c, spawn, SHCMD("wasistlos")},
