@@ -8,7 +8,6 @@ PACKAGES=(
 	wf-recorder
 	wofi
 	libhyprlang2
-	libhyprlang2-debuginfo
 	pavucontrol
 	hyprland-qtutils
 	wlogout
