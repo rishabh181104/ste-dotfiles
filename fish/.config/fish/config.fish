@@ -2,6 +2,8 @@ if status is-interactive
 	fastfetch
 end
 
+starship init fish | source
+
 # Set environment variables
 set -gx EDITOR nvim
 set -gx TERMINAL alacritty
