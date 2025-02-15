@@ -1,5 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export MOZ_ENABLE_WAYLAND:1
+SETUVAR --export OZONE_PLATFORM:wayland
+SETUVAR --export __GLX_VENDOR_LIBRARY_NAME:nvidia
 SETUVAR __fish_initialized:3400
 SETUVAR fish_autosuggestion_enabled:1
 SETUVAR fish_color_autosuggestion:brblack

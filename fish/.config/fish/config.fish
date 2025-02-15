@@ -5,6 +5,9 @@ end
 starship init fish | source
 
 # Set environment variables
+set -Ux OZONE_PLATFORM wayland
+set -Ux __GLX_VENDOR_LIBRARY_NAME nvidia
+set -Ux MOZ_ENABLE_WAYLAND 1
 set -gx EDITOR nvim
 set -gx TERMINAL alacritty
 set -gx BROWSER firefox
