@@ -23,7 +23,7 @@ require("lazy").setup({
 	"nvim-neo-tree/neo-tree.nvim",
 	"nvim-tree/nvim-web-devicons",
 	"MunifTanjim/nui.nvim",
-
+	"rust-lang/rust.vim",
 	-- Mason and LSP related plugins
 	{
 		"williamboman/mason.nvim",
