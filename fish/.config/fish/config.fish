@@ -20,7 +20,7 @@ set -gx LC_ALL en_US.UTF-8
 set -gx PATH $HOME/.local/bin $PATH
 set -gx PATH /usr/local/bin $PATH
 set -gx PATH /usr/bin $PATH
-
+set -gx PATH $HOME/.cargo/env.fish $PATH
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -lah'
