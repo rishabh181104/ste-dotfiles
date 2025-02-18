@@ -35,6 +35,9 @@ PACKAGES=(
 	slurp
 	nautilus
 	sddm
+	xdg-desktop-portal-wlr
+	xdg-desktop-portal-hyprland
+	xdg-desktop-portal
 )
 
 # Function to install packages
