@@ -44,7 +44,7 @@ alias nvi='nvim'
 alias v='nvim'
 alias duf='duf -hide special'
 alias mkdir='mkdir -p'
-alias zen='/home/ste/zen/./zen-bin'
+alias zen='/home/ste/zen/./zen'
 
 # Functions
 function fish_greeting
