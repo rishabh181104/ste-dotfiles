@@ -45,6 +45,7 @@ alias v='nvim'
 alias duf='duf -hide special'
 alias mkdir='mkdir -p'
 alias zen='/home/ste/zen/./zen'
+alias fetch='fastfetch'
 
 # Functions
 function fish_greeting
