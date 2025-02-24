@@ -47,7 +47,7 @@ alias duf='duf -hide special'
 alias mkdir='mkdir -p'
 alias zen='/home/ste/zen/./zen'
 alias fetch='fastfetch'
-alias cs2='gamescope -w 1280 -h 882 -W 2560 -H 1440 --fullscreen -- steam -game cs2 -novid -nojoy -high -threads 6 +mat_queue_mode 2 +fps_max 70 +cl_showfps 1 -tickrate 128'
+alias cs2='gamescope -w 1152 -h 864 --fullscreen -- steam -game cs2 -novid -nojoy -high -threads 6 +mat_queue_mode 2 +fps_max 70 +cl_showfps 1 -tickrate 128'
 
 # Functions
 function fish_greeting
