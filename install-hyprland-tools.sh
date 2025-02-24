@@ -34,7 +34,6 @@ PACKAGES=(
 	grim
 	slurp
 	nautilus
-	sddm
 	xdg-desktop-portal-wlr
 	xdg-desktop-portal-hyprland
 	xdg-desktop-portal
