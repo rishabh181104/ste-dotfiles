@@ -68,6 +68,10 @@ function fish_prompt
 	starship prompt
 end
 
+function min
+	/usr/bin/min --new-window &
+end
+
 # Source other configs if necessary
 if test -f ~/.config/fish/local.fish
 	source ~/.config/fish/local.fish
