@@ -52,6 +52,7 @@ alias restart-dm='sudo systemctl restart display-manager'
 alias smv='sudo mv'
 alias scp='sudo cp'
 
+alias anime='/home/ste/ste-dotfiles/./ani-cli'
 # Functions
 function fish_greeting
 	echo "THIS IS FISH, BRUV!:)"
