@@ -152,3 +152,6 @@ end
 if test -f ~/.config/fish/local.fish
 	source ~/.config/fish/local.fish
 end
+
+export WINEESYNC=1
+export WINEFSYNC=1
