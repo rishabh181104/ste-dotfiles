@@ -6,7 +6,8 @@ PACKAGES=(
 	hyprlock
 	wl-clipboard
 	wf-recorder
-	wofi
+	rofi-wayland
+	rofi-network-manager
 	libhyprlang2
 	pavucontrol
 	hyprland-qtutils
