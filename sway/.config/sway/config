@@ -12,7 +12,7 @@ exec --no-startup-id flameshot
 
 # Network Manager applet (nm-applet)
 exec --no-startup-id nm-applet
-exec --no-startup-id waybar
+# exec --no-startup-id waybar
 
 # Bluetooth applet (blueman-applet doesn't fully support Wayland; consider `blueman-manager`)
 exec --no-startup-id blueman-applet
@@ -31,8 +31,9 @@ exec --no-startup-id swaybg -i "$(find ~/Wallpapers/ -type f | shuf -n 1)" -m fi
 
 
 set $terminal kitty
-set $browser "env __GLX_VENDOR_LIBRARY_NAME=nvidia MOZ_ENABLE_WAYLAND=1 OZONE_PLATFORM=wayland thorium-browser --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu-memory-buffer-video-frames"
-set $filemanager dolphin
+set $browser "env __GLX_VENDOR_LIBRARY_NAME=nvidia MOZ_ENABLE_WAYLAND=1 OZONE_PLATFORM=wayland min --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu-memory-buffer-video-frames"
+set $browser1 "env __GLX_VENDOR_LIBRARY_NAME=nvidia MOZ_ENABLE_WAYLAND=1 OZONE_PLATFORM=wayland google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu-memory-buffer-video-frames"
+set $filemanager nautilus
 set $editor cursor.AppImage
 set $music spotify-launcher
 set $communication wasistlos
@@ -40,7 +41,7 @@ set $creativity obsidian.AppImage
 set $ide jetbrains-toolbox
 
 # Gaps (if you use i3-gaps)
-gaps inner 3
+gaps inner 1
 gaps outer 1
 
 # class                 border  bground text    indicator child_border
@@ -76,6 +77,7 @@ bindsym $mod+q kill
 bindsym $mod+l exec swaylock -i /home/ste/Wallpapers/cat.jpg
 bindsym Print exec grim -g "$(slurp)" ~/Screenshot/-$(date +'%Y-%m-%d-%H%M%S').png
 bindsym $mod+b exec $browser
+bindsym $mod+Shift+b exec $browser1
 bindsym $mod+e exec $filemanager
 bindsym $mod+u exec $editor
 bindsym $mod+s exec $music
@@ -199,3 +201,8 @@ exec --no-startup-id swayidle \
 	     timeout 300 'swaylock -i /home/ste/Wallpapers/cat.jpg --color=000000 --ignore-empty-password --show-failed-attempts --indicator' \
 	     resume 'swaymsg "output * dpms on"' \
 	     before-sleep 'swaylock -i /home/ste/Wallpapers/cat.jpg --color=000000 --ignore-empty-password --show-failed-attempts --indicator'
+
+	     bar {
+		     status_command i3status  # Or your chosen status tool
+	     }
+
