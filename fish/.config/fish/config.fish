@@ -51,6 +51,7 @@ alias fetch='fastfetch'
 alias restart-dm='sudo systemctl restart display-manager'
 alias smv='sudo mv'
 alias scp='sudo cp'
+alias remove-unwanted='sudo zypper rm $(zypper packages --unneeded | awk 'NR>4 {print $5}') && sudo zypper clean --all'
 
 alias anime='/home/ste/ste-dotfiles/./ani-cli'
 
