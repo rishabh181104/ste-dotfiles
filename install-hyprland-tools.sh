@@ -42,11 +42,8 @@ PACKAGES=(
 
 # Function to install packages
 install_packages() {
-	echo "Updating package list..."
-	sudo zypper refresh
-
 	echo "Installing packages..."
-	sudo zypper install -y "${PACKAGES[@]}"
+	paru -Syu -y "${PACKAGES[@]}"
 
 	echo "Installation complete!"
 }
