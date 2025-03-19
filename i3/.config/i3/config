@@ -3,7 +3,7 @@ set $mod Mod4
 font pango:monospace 9
 
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --rate 60.00
+exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1080 --rate 60.00
 exec --no-startup-id xss-lock -- i3lock --color=000000 --ignore-empty-password --show-failed-attempts --indicator
 exec --no-startup-id flameshot
 exec --no-startup-id nm-applet
@@ -14,7 +14,7 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset s noblank
 exec --no-startup-id xset -dpms
 
-exec --no-startup-id "feh --randomize --bg-fill ~/Wallpapers/*"
+exec --no-startup-id "feh --randomize --bg-scale ~/Wallpapers/*"
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
