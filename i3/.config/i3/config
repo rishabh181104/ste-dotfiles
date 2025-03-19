@@ -34,16 +34,6 @@ new_float pixel 4
 gaps inner 1
 gaps outer 3
 
-# Set the border color and sizes
-client.focused          #8B62D4 #8B62D4 #F8F8F2 #8B62D4   #8B62D4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-
-client.background       #F8F8F2
-
-
 bindsym $mod+space exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-20' -p 'dmenu%'"
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
@@ -185,20 +175,27 @@ mode "resize" {
 		bindsym $mod+r mode "default"
 }
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+
 bar {
 	status_command i3status  # Or your chosen status tool
 		colors {
-			background #00000000  # Background color of the bar
-				statusline #f8f8f2  # Text color for the bar
-				separator  #44475a  # Separator color
+			background #282A36
+				statusline #F8F8F2
+				separator  #44475A
 
-# Workspace colors
-				focused_workspace   #ff79c6 #44475a #282a36  # Bright pink for focused workspace
-				active_workspace    #50fa7b #44475a #282a36  # Bright green for active workspace
-				inactive_workspace  #8be9fd #44475a #282a36  # Brighter cyan for inactive workspaces
-				urgent_workspace    #ff5555 #44475a #282a36  # Bright red for urgent workspace
+				focused_workspace  #44475A #44475A #F8F8F2
+				active_workspace   #282A36 #44475A #F8F8F2
+				inactive_workspace #282A36 #282A36 #BFBFBF
+				urgent_workspace   #FF5555 #FF5555 #F8F8F2
+				binding_mode       #FF5555 #FF5555 #F8F8F2
 		}
 }
 
