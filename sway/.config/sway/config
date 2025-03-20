@@ -31,7 +31,7 @@ exec --no-startup-id swaybg -i "$(find ~/Wallpapers/ -type f | shuf -n 1)" -m fi
 
 
 set $terminal kitty
-set $browser "env __GLX_VENDOR_LIBRARY_NAME=nvidia MOZ_ENABLE_WAYLAND=1 OZONE_PLATFORM=wayland min --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu-memory-buffer-video-frames"
+set $browser min-browser
 set $browser1 "env __GLX_VENDOR_LIBRARY_NAME=nvidia MOZ_ENABLE_WAYLAND=1 OZONE_PLATFORM=wayland google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu-memory-buffer-video-frames"
 set $filemanager nautilus
 set $editor cursor.AppImage
