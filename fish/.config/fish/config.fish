@@ -62,7 +62,6 @@ alias hlp='less ~/.bashrc_help'
 alias da='date "+%Y-%m-%d %A %T %Z"'
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='trash -v'
 alias mkdir='mkdir -p'
 alias ps='ps auxf'
 alias ping='ping -c 10'
@@ -144,10 +143,6 @@ end
 
 function fish_prompt
 	starship prompt
-end
-
-function min
-	/usr/bin/min --new-window &
 end
 
 # Source other configs if necessary
