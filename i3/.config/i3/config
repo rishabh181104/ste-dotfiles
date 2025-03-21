@@ -7,7 +7,7 @@ exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --rate 60.00
 exec --no-startup-id xss-lock -- i3lock --color=000000 --ignore-empty-password --show-failed-attempts --indicator
 exec --no-startup-id flameshot
 exec --no-startup-id nm-applet
-exec --no-startup-id picom --backend=xrender
+exec --no-startup-id picom
 exec --no-startup-id blueman-applet
 exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
 exec --no-startup-id xset s off
@@ -18,7 +18,7 @@ exec --no-startup-id "feh --randomize --bg-fill ~/Wallpapers/*"
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
-set $terminal wezterm
+set $terminal alacritty
 set $browser __GLX_VENDOR_LIBRARY_NAME=nvidia brave-browser --enable-accelerated-video-decode --enable-accelerated-video-encode
 set $filemanager thunar
 set $editor cursor.AppImage
