@@ -145,6 +145,10 @@ function fish_prompt
 	starship prompt
 end
 
+function brave-nvidia
+	env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia brave-browser --use-gl=desktop
+end
+
 # Source other configs if necessary
 if test -f ~/.config/fish/local.fish
 	source ~/.config/fish/local.fish
