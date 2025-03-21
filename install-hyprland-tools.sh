@@ -34,7 +34,7 @@ PACKAGES=(
 	starship
 	grim
 	slurp
-	nautilus
+	thunar
 	xdg-desktop-portal-wlr
 	xdg-desktop-portal-hyprland
 	xdg-desktop-portal
